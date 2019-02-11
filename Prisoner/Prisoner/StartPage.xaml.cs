@@ -19,7 +19,7 @@ namespace Prisoner
 
         private void StartButton_Clicked(object sender, EventArgs e)
         {
-            App.Current.MainPage = new TestPage();
+            App.Current.MainPage = new TestPage(1);
         }
     }
 }

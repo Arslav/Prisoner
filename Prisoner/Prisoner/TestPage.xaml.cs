@@ -10,19 +10,22 @@ namespace Prisoner
 {
     public partial class TestPage : ContentPage
     {
+        public string Appeal { get; set; }
         public TestPage()
         {
             InitializeComponent();
+        }
 
-            var question = App.DB.Questions.First(q => q.Id == 1);
-            var answers = App.DB.Answers.Where(a => a.Question == question);
-            foreach(var ans in answers)
+        public TestPage(int id) : this(App.DB.Questions.First(q => q.Id == id)) { }
+
+        public TestPage(Question question) : this()
+        {
+            var answers = App.DB.Answers.Where(a => a.Question.Id == question.Id);
+            foreach (var ans in answers)
             {
                 answersStackLayout.Children.Add(new AnswerButton(ans));
             }
             questionLabel.Text = question.Text;
-
-
         }
     }
 }

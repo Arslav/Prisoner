@@ -3,10 +3,13 @@
              xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
              x:Class="Prisoner.EndPage">
     <ContentPage.Content>
-        <StackLayout>
-            <Label Text="Welcome to Xamarin.Forms!"
-                VerticalOptions="CenterAndExpand" 
-                HorizontalOptions="CenterAndExpand" />
+        <StackLayout Margin="5,5,5,5">
+            <Label x:Name="posLabel" Text="Блатной" HorizontalOptions="CenterAndExpand" FontSize="32" FontAttributes="Bold"/>
+            <Image x:Name="posImg"/>
+            <Label x:Name="descLabel">
+                Это, как правило, профессиональные преступники. Зачастую именно «блатным» принадлежит реальная власть в тюрьме или на зоне. Существует много требований к претендентам на статус «блатного»: например, «блатным» не мог стать заключённый, служивший в армии, работавший официантом, таксистом и прочей обслугой (то есть т. н. «халдеем»), правда, в последнее время некоторые из этих требований смягчились или были вовсе отменены. «Блатные», как правило, в зоне не работают; там же, где это допускается, «блатной» не должен занимать никакой официальной должности (в противном случае он автоматически становится «козлом»)
+            </Label>
+            <Button x:Name="againBut" Text="Пройти еще раз" HorizontalOptions="Center" Padding="30,0" Clicked="AgainBut_Clicked"/>
         </StackLayout>
     </ContentPage.Content>
 </ContentPage>

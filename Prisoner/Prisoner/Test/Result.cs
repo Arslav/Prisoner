@@ -9,6 +9,7 @@ namespace Prisoner.Test
     {
         [Key]
         public int Id { get; set; }
+        public string Name { get; set; }
         public string Text { get; set; }
         public string Pictute { get; set; }
     }

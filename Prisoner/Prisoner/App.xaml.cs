@@ -14,11 +14,14 @@ namespace Prisoner
         public App()
         {
             InitializeComponent();
-            var dbName = "db.sqlite";
-            var directory = Environment.GetFolderPath(Environment.SpecialFolder.Personal);
-            var fullPath = Path.Combine(directory,dbName);
-            DB = new TestContext(fullPath);
-            DB.Database.EnsureCreated();
+            if (!DesignMode.IsDesignModeEnabled)
+            {
+                var dbName = "db.sqlite";
+                var directory = Environment.GetFolderPath(Environment.SpecialFolder.Personal);
+                var fullPath = Path.Combine(directory, dbName);
+                DB = new TestContext(fullPath);
+                DB.Database.EnsureCreated();
+            }
             MainPage = new StartPage();
             
         }

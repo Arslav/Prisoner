@@ -11,6 +11,7 @@ namespace Prisoner.Test
         public int Id { get; set; }
         public Question Question { get; set; }
         public string Text { get; set; }
+        public Question NextQuestion { get; set; }
         public int? Result { get; set; }
         public string ResultText { get; set; }
     }

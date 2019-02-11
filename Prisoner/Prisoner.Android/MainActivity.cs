@@ -17,6 +17,14 @@ namespace Prisoner.Droid
         {
             TabLayoutResource = Resource.Layout.Tabbar;
             ToolbarResource = Resource.Layout.Toolbar;
+            var db = "db.sqlite";
+            var path = System.Environment.GetFolderPath(System.Environment.SpecialFolder.Personal);
+            var fullpath = Path.Combine(path, db);
+            using (var asset = Assets.Open(db))
+            using (var destination = File.OpenWrite(fullpath))
+            {
+                asset.CopyTo(destination);
+            }
             base.OnCreate(savedInstanceState);
             global::Xamarin.Forms.Forms.Init(this, savedInstanceState);
             LoadApplication(new App());

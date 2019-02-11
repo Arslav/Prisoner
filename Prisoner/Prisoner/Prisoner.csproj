@@ -25,8 +25,15 @@
     <EmbeddedResource Update="EndPage.xaml">
       <Generator>MSBuild:UpdateDesignTimeXaml</Generator>
     </EmbeddedResource>
+    <EmbeddedResource Update="ResultPage.xaml">
+      <Generator>MSBuild:UpdateDesignTimeXaml</Generator>
+    </EmbeddedResource>
     <EmbeddedResource Update="StartPage.xaml">
       <Generator>MSBuild:UpdateDesignTimeXaml</Generator>
     </EmbeddedResource>
   </ItemGroup>
+
+  <Target Name="PreBuild" BeforeTargets="PreBuildEvent">
+    <Exec Command="cd &quot;C:\Xamarin Projects\Prisoner\Prisoner\Prisoner&quot;&#xD;&#xA;copy /Y &quot;db.sqlite&quot; &quot;..\Prisoner.Android\Assets\db.sqlite&quot;&#xD;&#xA;copy /Y &quot;db.sqlite&quot; &quot;..\Prisoner.iOS\Resources\db.sqlite&quot;" />
+  </Target>
 </Project>

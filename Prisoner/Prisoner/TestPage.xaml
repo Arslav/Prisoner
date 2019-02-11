@@ -4,13 +4,14 @@
              xmlns:local="clr-namespace:Prisoner"
              x:Class="Prisoner.TestPage">
 
-    <Grid>
+    <Grid Margin="5,5,5,5">
         <Grid.RowDefinitions>
             <RowDefinition/>
             <RowDefinition Height="auto"/>
         </Grid.RowDefinitions>
-        <!--<Image x:Name="img"/>-->
-        <Label x:Name="questionLabel"/>
+        <Image x:Name="img"/>
+        <Label x:Name="questionLabel" FontSize="18"/>
+       
         <StackLayout x:Name="answersStackLayout" Grid.Row="1" />
     </Grid>
 

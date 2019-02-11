@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.IO;
 using System.Linq;
 
 using Foundation;
@@ -22,7 +23,9 @@ namespace Prisoner.iOS
         //
         public override bool FinishedLaunching(UIApplication app, NSDictionary options)
         {
-            global::Xamarin.Forms.Forms.Init();
+            var db = "db.sqlite";
+            var path = Environment.GetFolderPath(Environment.SpecialFolder.Personal);
+            File.Copy(db, Path.Combine(path, db));
             LoadApplication(new App());
 
             return base.FinishedLaunching(app, options);

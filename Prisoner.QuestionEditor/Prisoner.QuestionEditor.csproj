@@ -85,6 +85,7 @@
     <Compile Include="Controls\QuestionControl.xaml.cs">
       <DependentUpon>QuestionControl.xaml</DependentUpon>
     </Compile>
+    <Compile Include="QuestionAnswerLine.cs" />
     <Compile Include="ResultWindow.xaml.cs">
       <DependentUpon>ResultWindow.xaml</DependentUpon>
     </Compile>

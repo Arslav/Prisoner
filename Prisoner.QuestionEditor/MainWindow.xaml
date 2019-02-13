@@ -1,0 +1,36 @@
+﻿<Window
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:Prisoner.QuestionEditor"
+        xmlns:с="clr-namespace:Prisoner.QuestionEditor.Controls" x:Class="Prisoner.QuestionEditor.MainWindow"
+        mc:Ignorable="d"
+        xmlns:p="clr-namespace:Wpf.Controls.PanAndZoom;assembly=Wpf.Controls.PanAndZoom"
+        Title="Тест на ЗЕКа: Редактор" Height="450" Width="800" Loaded="Windows_Loaded" Closed="Window_Closed">
+    <Grid Margin="2">
+        <Grid.RowDefinitions>
+            <RowDefinition Height="auto"/>
+            <RowDefinition />
+        </Grid.RowDefinitions>
+        <Grid>
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition Width="100"/>
+                <ColumnDefinition Width="auto"/>
+                <ColumnDefinition/>
+                <ColumnDefinition Width="100"/>
+            </Grid.ColumnDefinitions>
+            <Button>Добавить</Button>
+            <StackPanel Grid.Column="2" Orientation="Horizontal">
+                <Label>Состояние:</Label>
+                <TextBox Width="30" Margin="3">1</TextBox>
+                <Button>Перейти</Button>
+            </StackPanel>
+            <Button Grid.Column="3" Click="End_Click">Концовки</Button>
+        </Grid>
+        <p:ZoomBorder Name="panzomm" Grid.Row="1">
+            <Canvas Name="canvas" />
+        </p:ZoomBorder>
+    </Grid>
+
+</Window>

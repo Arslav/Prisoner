@@ -20,12 +20,13 @@ namespace Prisoner
 
         public TestPage(Question question) : this()
         {
-            var answers = App.DB.Answers.Where(a => a.Question.Id == question.Id);
+            var answers = App.DB.Answers.Where(a => a.Question.Id == question.Id).ToList();
             foreach (var ans in answers)
             {
                 answersStackLayout.Children.Add(new AnswerButton(ans));
             }
-            questionLabel.Text = question.Text;
+            if(Appeal != String.Empty) questionLabel.Text = Appeal + " " + question.Text;
+            else  questionLabel.Text = question.Text;
         }
     }
 }

@@ -27,7 +27,7 @@ namespace Prisoner.Test
                 if(Answer.NextQuestion == null)
                 {
                     var state = Answer.Question.State + 1;
-                    var list = App.DB.Questions.Where(q => q.State == state);
+                    var list = App.DB.Questions.Where(q => q.State == state).ToList();
                     var question = list.ElementAt(_rand.Next(list.Count()));
                     App.Current.MainPage = new TestPage(question)
                     {
